@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">파워퍼프걸</string>
+    <string name="back">back</string>
+    <string name="move">움직인 횟수</string>
+    <string name="time">시간</string>
+    <string name="enter">Enter</string>
+    <string name="refresh">다시하기</string>
+    <string name="other">다른스테이지</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_select_stage">파워퍼프걸</string>
+
+</resources>

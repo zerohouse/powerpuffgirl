@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/select"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    tools:context="com.mylikenews.go.SelectStage" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.70" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/stages"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_weight="0.40" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.29" >
+    </TextView>
+
+</LinearLayout>
