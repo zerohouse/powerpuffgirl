@@ -554,6 +554,7 @@ public class Game extends Activity {
 			break;
 		case R.id.other:
 			mainTime = 0;
+			moveint = 0;
 			finish();
 			break;
 		}
