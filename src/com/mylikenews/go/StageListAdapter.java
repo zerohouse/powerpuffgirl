@@ -69,6 +69,7 @@ class StageListAdapter extends BaseAdapter {
 				Intent game = new Intent(maincon, Game.class);
 				game.putExtra("stage", stages.get(pos).stagestring);
 				game.putExtra("stagename", (pos + 1) + "");
+				game.putExtra("difficulty", stages.get(pos).difficulty + "");
 				maincon.startActivity(game);
 			}
 		});

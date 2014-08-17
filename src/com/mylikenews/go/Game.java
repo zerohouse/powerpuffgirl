@@ -46,6 +46,7 @@ public class Game extends Activity {
 	boolean select = false;
 	int blockx;
 	int blocky;
+	static int difficulty;
 	Context context;
 	boolean stop = false;
 
@@ -71,6 +72,8 @@ public class Game extends Activity {
 		blockx = relativelayout.getWidth() / 6;
 		blocky = relativelayout.getHeight() / 6;
 		String stagestring = getstage.getExtras().getString("stage");
+		difficulty = Integer.parseInt(getstage.getExtras().getString(
+				"difficulty"));
 		setTitle("파워퍼프걸 - " + getstage.getExtras().getString("stagename")
 				+ "단계");
 		putElements(stagestring);
@@ -364,7 +367,7 @@ public class Game extends Activity {
 				resId = R.drawable.puff2;
 			else if (rannum == 2)
 				resId = R.drawable.puff3;
-			
+
 		} else if (horizontalint == 0 && size == 2) {
 			if (rannum == 0)
 				resId = R.drawable.char2hei1;
@@ -380,7 +383,7 @@ public class Game extends Activity {
 				resId = R.drawable.char3hei2;
 			else if (rannum == 2)
 				resId = R.drawable.char3hei3;
-			
+
 		} else if (horizontalint == 1 && size == 2) {
 			if (rannum == 0)
 				resId = R.drawable.char2wid1;
@@ -388,7 +391,7 @@ public class Game extends Activity {
 				resId = R.drawable.char2wid2;
 			else if (rannum == 2)
 				resId = R.drawable.char2wid3;
-			
+
 		} else if (horizontalint == 1 && size == 3) {
 			if (rannum == 0)
 				resId = R.drawable.char3wid1;
@@ -529,11 +532,13 @@ public class Game extends Activity {
 			LayoutInflater mLayoutInflater = getActivity().getLayoutInflater();
 			mBuilder.setView(mLayoutInflater
 					.inflate(R.layout.dialog_main, null));
-			mBuilder.setTitle("스테이지완료!");
-			int score = 50000 / (mainTime + 3 * moveint);
-			mBuilder.setMessage(String
-					.format("시간 : %s    움직인 횟수:%d \n  점수 : %d", strTime,
-							moveint, score));
+			mBuilder.setTitle("Stage Clear!!");
+
+			int score = (10000 * ((difficulty + 1) * 10))
+					/ (mainTime + 3 * moveint);
+			mBuilder.setMessage(String.format(
+					"Move : %d   Time : %s \n  Score : %d", moveint, strTime,
+					score));
 			return mBuilder.create();
 		}
 
@@ -544,6 +549,7 @@ public class Game extends Activity {
 		switch (v.getId()) {
 		case R.id.refresh:
 			refreshGame();
+			stop = false;
 			mMainDialog.dismiss();
 			break;
 		case R.id.other:
